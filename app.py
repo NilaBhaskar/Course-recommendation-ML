@@ -4,10 +4,21 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 import re
 from joblib import dump, load
+import os
 
 # Function to preprocess data and train model
 def preprocess_and_train_model():
-    data = pd.read_csv(r'C:/Nila/Coursera.csv',, delimiter=',')
+    current_directory = os.getcwd()
+    print(current_directory) 
+    os.chdir("c:/Nila")
+    current_directory = os.getcwd()
+    print(current_directory)
+    file_path = 'Coursera.csv'
+    if os.path.exists(file_path):
+        print('The file exists!')
+    else:
+        print('The file does not exist.')
+    data = pd.read_csv(r'Coursera.csv', delimiter=',')
     data.drop_duplicates(inplace=True)
     data = data[data['Difficulty Level'] != 'Not Calibrated']
     data = data[data['Course Rating'] != 'Not Calibrated']
