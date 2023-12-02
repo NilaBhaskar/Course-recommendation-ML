@@ -28,16 +28,6 @@ def preprocess_and_train_model():
 
 @st.cache_data
 def load_data():
-    current_directory = os.getcwd()
-    print(current_directory) 
-    os.chdir(r"c:/Nila")
-    current_directory = os.getcwd()
-    print(current_directory)
-    file_path = 'Coursera.csv'
-    if os.path.exists(file_path):
-        print('The file exists!')
-    else:
-        print('The file does not exist.')
     data = pd.read_csv(r'C:/Nila/Coursera.csv', delimiter=',')
     data.drop_duplicates(inplace=True)
     data = data[data['Difficulty Level'] != 'Not Calibrated']
@@ -61,7 +51,16 @@ def recommend_kmeans(course_index, data):
 
 # Streamlit interface
 st.title('Online Course Recommendation System')
-
+current_directory = os.getcwd()
+st.write(current_directory) 
+os.chdir(r"c:/Nila")
+current_directory = os.getcwd()
+st.write(current_directory)
+file_path = 'Coursera.csv'
+if os.path.exists(file_path):
+    st.write('The file exists!')
+else:
+    st.write('The file does not exist.')
 data = load_data()
 
 # User input
