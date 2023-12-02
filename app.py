@@ -5,13 +5,9 @@ from sklearn.cluster import KMeans
 import re
 from joblib import dump, load
 
-import os
-current_directory = os.getcwd()
-print(current_directory)
-
 # Function to preprocess data and train model
 def preprocess_and_train_model():
-    data = pd.read_csv(r'C:/Nila/Coursera.csv')
+    data = pd.read_csv(r'C:/Nila/Coursera.csv',, delimiter=',')
     data.drop_duplicates(inplace=True)
     data = data[data['Difficulty Level'] != 'Not Calibrated']
     data = data[data['Course Rating'] != 'Not Calibrated']
@@ -31,7 +27,7 @@ def preprocess_and_train_model():
 
 @st.cache_data
 def load_data():
-    data = pd.read_csv(r'C:/Nila/Coursera.csv')
+    data = pd.read_csv(r'C:/Nila/Coursera.csv',, delimiter=',')
     data.drop_duplicates(inplace=True)
     data = data[data['Difficulty Level'] != 'Not Calibrated']
     data = data[data['Course Rating'] != 'Not Calibrated']
