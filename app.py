@@ -38,7 +38,7 @@ def preprocess_and_train_model():
 
 @st.cache_data
 def load_data():
-    data = pd.read_csv(r'C:/Nila/Coursera.csv',, delimiter=',')
+    data = pd.read_csv(r'C:/Nila/Coursera.csv', delimiter=',')
     data.drop_duplicates(inplace=True)
     data = data[data['Difficulty Level'] != 'Not Calibrated']
     data = data[data['Course Rating'] != 'Not Calibrated']
