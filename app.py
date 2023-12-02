@@ -52,8 +52,12 @@ def recommend_kmeans(course_index, data):
 # Streamlit interface
 st.title('Online Course Recommendation System')
 current_directory = os.getcwd()
-st.write(current_directory) 
-os.chdir(r"c:/Nila")
+st.write(current_directory)
+
+# Change the working directory to where the CSV file is located
+data_directory = 'C:/Nila'  # Adjust this based on the actual directory structure
+os.chdir(os.path.join(data_directory))
+
 current_directory = os.getcwd()
 st.write(current_directory)
 file_path = 'Coursera.csv'
@@ -61,6 +65,7 @@ if os.path.exists(file_path):
     st.write('The file exists!')
 else:
     st.write('The file does not exist.')
+    
 data = load_data()
 
 # User input
