@@ -7,7 +7,7 @@ import re
 # Function to load and preprocess data
 @st.cache_data
 def load_data():
-    data = pd.read_csv('Coursera.csv')
+    data = pd.read_csv('C:\Users\91979\OneDrive\OneDrive - Amrita Vishwa Vidyapeetham\Desktop\ml_project\Coursera.csv')
     data.drop_duplicates(inplace=True)
     data = data[data['Difficulty Level'] != 'Not Calibrated']
     data = data[data['Course Rating'] != 'Not Calibrated']
