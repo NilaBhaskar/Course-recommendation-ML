@@ -30,7 +30,7 @@ def preprocess_and_train_model():
 def load_data():
     current_directory = os.getcwd()
     print(current_directory) 
-    os.chdir("c:/Nila")
+    os.chdir(r"c:/Nila")
     current_directory = os.getcwd()
     print(current_directory)
     file_path = 'Coursera.csv'
