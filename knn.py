@@ -24,7 +24,7 @@ def recommend_knn(course_index, num_recommendations=5):
     return combined_courses
 
 # Load and preprocess data
-data = pd.read_csv("C:\Users\91979\OneDrive\OneDrive - Amrita Vishwa Vidyapeetham\Desktop\ml_project\Coursera.csv")
+data = pd.read_csv(r"C:\Users\91979\OneDrive\OneDrive - Amrita Vishwa Vidyapeetham\Desktop\ml_project\Coursera.csv")
 data.drop_duplicates(inplace=True)
 data = data[data['Difficulty Level'] != 'Not Calibrated']
 data = data[data['Course Rating'] != 'Not Calibrated']
