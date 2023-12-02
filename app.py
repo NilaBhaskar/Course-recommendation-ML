@@ -7,7 +7,7 @@ from joblib import dump, load
 
 # Function to preprocess data and train model
 def preprocess_and_train_model():
-    data = pd.read_csv("C:\\Users\\viswa\\Data Science and ML\\ML PROJECT\\Dataset\\Coursera.csv")
+    data = pd.read_csv("C:\Users\91979\OneDrive\OneDrive - Amrita Vishwa Vidyapeetham\Desktop\ml_project\Coursera.csv")
     data.drop_duplicates(inplace=True)
     data = data[data['Difficulty Level'] != 'Not Calibrated']
     data = data[data['Course Rating'] != 'Not Calibrated']
@@ -27,7 +27,7 @@ def preprocess_and_train_model():
 
 @st.cache_data
 def load_data():
-    data = pd.read_csv("C:\\Users\\viswa\\Data Science and ML\\ML PROJECT\\Dataset\\Coursera.csv")
+    data = pd.read_csv("C:\Users\91979\OneDrive\OneDrive - Amrita Vishwa Vidyapeetham\Desktop\ml_project\Coursera.csv")
     data.drop_duplicates(inplace=True)
     data = data[data['Difficulty Level'] != 'Not Calibrated']
     data = data[data['Course Rating'] != 'Not Calibrated']
