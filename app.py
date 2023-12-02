@@ -5,6 +5,10 @@ from sklearn.cluster import KMeans
 import re
 from joblib import dump, load
 
+import os
+current_directory = os.getcwd()
+print(current_directory)
+
 # Function to preprocess data and train model
 def preprocess_and_train_model():
     data = pd.read_csv(r'C:/Nila/Coursera.csv')
