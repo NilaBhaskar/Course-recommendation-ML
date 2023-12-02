@@ -16,7 +16,7 @@ nltk.download('wordnet')
 
 # Load data
 def load_data():
-    data = pd.read_csv(r"C:\Users\91979\OneDrive\OneDrive - Amrita Vishwa Vidyapeetham\Desktop\ml_project\Coursera.csv")
+    data = pd.read_csv(r"C:\Nila\Coursera.csv")
     return data
 
 df = load_data()
