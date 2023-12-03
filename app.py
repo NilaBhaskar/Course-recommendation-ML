@@ -8,7 +8,7 @@ import os
 
 # Function to preprocess data and train model
 def preprocess_and_train_model():
-    data = pd.read_csv(r'C:\\Nila\\Coursera.csv', delimiter=',')
+    data = pd.read_csv(r'Coursera.csv', delimiter=',')
     data.drop_duplicates(inplace=True)
     data = data[data['Difficulty Level'] != 'Not Calibrated']
     data = data[data['Course Rating'] != 'Not Calibrated']
@@ -28,7 +28,7 @@ def preprocess_and_train_model():
 
 @st.cache_data
 def load_data():
-    data = pd.read_csv(r'C:\\Nila\\Coursera.csv', delimiter=',')
+    data = pd.read_csv(r'C:/Nila/Coursera.csv', delimiter=',')
     data.drop_duplicates(inplace=True)
     data = data[data['Difficulty Level'] != 'Not Calibrated']
     data = data[data['Course Rating'] != 'Not Calibrated']
@@ -51,7 +51,21 @@ def recommend_kmeans(course_index, data):
 
 # Streamlit interface
 st.title('Online Course Recommendation System')
+current_directory = os.getcwd()
+st.write(current_directory)
 
+# Change the working directory to where the CSV file is located
+data_directory = 'C:/Nila'  # Adjust this based on the actual directory structure
+os.chdir(os.path.join(data_directory))
+
+current_directory = os.getcwd()
+st.write(current_directory)
+file_path = 'Coursera.csv'
+if os.path.exists(file_path):
+    st.write('The file exists!')
+else:
+    st.write('The file does not exist.')
+    
 data = load_data()
 
 # User input
